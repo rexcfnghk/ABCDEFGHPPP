@@ -1,4 +1,6 @@
-﻿// For getting permutations of a list: http://stackoverflow.com/a/3129136/465056
+﻿open System
+
+// For getting permutations of a list: http://stackoverflow.com/a/3129136/465056
 let rec getPermutations list =
     let rec distribute e = function
         | [] -> [[e]]
@@ -23,5 +25,12 @@ let canMatchEquation = function
 |> List.filter canMatchEquation
 |> List.iter (function 
                 | [a; b; c; d; e; f; g; h; p; _] -> 
-                        printfn "(%i%i - %i%i = %i%i) + %i%i = %i%i%i" a b c d e f g h p p p
+                        printfn "%4i%i" a b
+                        printfn "-%3i%i" c d
+                        printfn "-----"
+                        printfn "%4i%i" e f
+                        printfn "+%3i%i" g h
+                        printfn "-----"
+                        printfn "%3i%i%i" p p p
+                        printfn "%s" Environment.NewLine
                 | _ -> failwith "Unexpected")
