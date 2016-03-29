@@ -32,5 +32,5 @@ let canMatchEquation = function
                         printfn "+%3i%i" g h
                         printfn "-----"
                         printfn "%3i%i%i" p p p
-                        printfn "%s" Environment.NewLine
+                        printf "%s" Environment.NewLine
                 | _ -> failwith "Unexpected")
